@@ -89,7 +89,7 @@ while True:
         cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 225), 2)
         cv2.putText(frame, name, (x2, y2), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 255, 225), 2)
 
-    cv2.imshow("Tuan", frame)
+    cv2.imshow(".", frame)
     if cv2.waitKey(1) == ord("q"):
         break
 
