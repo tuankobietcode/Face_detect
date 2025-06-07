@@ -12,13 +12,13 @@ path = "pic2"
 images = []
 classNames = []
 myList = os.listdir(path)
-print(myList)
+print('danh sách ảnh :',myList)
 for cl in myList:
     curImg = cv2.imread(f"{path}/{cl}")
     images.append(curImg)
     classNames.append(os.path.splitext(cl)[0])
-    print(len(images))
-    print(classNames)
+print(len(images))
+print("danh sach ten:",classNames)
 
 # Mã hóa ảnh
 def Mahoa(images):
