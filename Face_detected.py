@@ -7,7 +7,7 @@ import numpy as np
 from datetime import datetime
 from openpyxl import Workbook, load_workbook
 import csv
-# Load ảnh 
+# Load ảnh từ pic 2
 path = "pic2"
 images = []
 classNames = []
@@ -60,7 +60,7 @@ def Add_data(name):
     recognized_names.add(name)
 
 
-# Camera
+# Mở Webcam
 cap = cv2.VideoCapture(0)
 
 while True:
