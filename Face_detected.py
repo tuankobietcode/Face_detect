@@ -7,7 +7,7 @@ import numpy as np
 from datetime import datetime
 from openpyxl import Workbook, load_workbook
 import csv
-# Load ảnh
+# Load ảnh 
 path = "pic2"
 images = []
 classNames = []
@@ -30,13 +30,13 @@ def Mahoa(images):
     return encodeList
 
 encodeListknow = Mahoa(images)
-print("Mã hóa thành công")
+print("mã hóa thành công!")
 print(len(encodeListknow))
 
-# Danh sách tên đã nhận diện (chỉ ghi 1 lần trong 1 phiên chạy)
+# Danh sách tên đã nhận diện 
 recognized_names = set()
 
-# Thêm data nhận được vào Log
+# Thêm data đã lấy được vào danh sach
 
 
 
@@ -46,7 +46,7 @@ def Add_data(name):
         return
 
     now = datetime.now().strftime('%Y-%m-%d ,%H:%M:%S')
-    file = "log.csv"
+    file = "danh_sach.csv"
 
     if not os.path.exists(file):
         with open(file, "w", newline="", encoding="utf-8") as f:
@@ -83,13 +83,13 @@ while True:
         else:
             name = "Unknow"
 
-        # In tên lên frame
+        # Vẽ khung sau khi đã xđ khuôn mặt và in tên lên frame
         y1, x2, y2, x1 = faceLoc
         y1, x2, y2, x1 = y1*2, x2*2, y2*2, x1*2
         cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 225), 2)
         cv2.putText(frame, name, (x2, y2), cv2.FONT_HERSHEY_DUPLEX, 1, (255, 255, 225), 2)
 
-    cv2.imshow(".", frame)
+    cv2.imshow("", frame)
     if cv2.waitKey(1) == ord("q"):
         break
 
